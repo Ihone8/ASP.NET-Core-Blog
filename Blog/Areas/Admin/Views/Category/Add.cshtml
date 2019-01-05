@@ -1,0 +1,60 @@
+﻿@model Blog.Model.CATEGORY
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<blockquote class="layui-elem-quote">
+    @if (Model.Id == 0)
+    {
+        @string.Format("添加新分类")
+    }
+    @if (Model.Id != 0)
+    {
+        @string.Format("修改 {0} ", Model.CName)
+    }
+</blockquote>
+<form class="layui-form" action="" method="post" style="padding:10px;height:100%;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题：</label>
+        <div class="layui-input-block">
+            @Html.TextBoxFor(model => model.CName, htmlAttributes: new { @class = "layui-input", @placeholder = "请输入类型", @autocomplete = "off" })
+            @*<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">*@
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">内容：</label>
+        <div class="layui-input-block">
+            @Html.TextAreaFor(model => model.Remark, htmlAttributes: new { @class = "layui-textarea", @placeholder = "描述" })
+            @*<textarea name="desc" placeholder="请输入内容" class="layui-textarea" style="height:280px;"></textarea>*@
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">保存</button>
+            <a href="/Admin/Category/Index" class="layui-btn">返回列表</a>
+        </div>
+    </div>
+</form>
+<script src="~/lib/layui/layui.js"></script>
+<style>
+    textarea {
+        min-height: 200px;
+    }
+</style>
+<script>
+    //Demo
+    layui.use(['form', 'layedit'], function () {
+        var form = layui.form;
+        var layedit = layui.layedit;
+        layedit.build('Remark', {
+            height: 200 //设置编辑器高度
+        }); //建立编辑器
+        //监听提交
+        //form.on('submit(formDemo)', function (data) {
+        //    layer.msg(JSON.stringify(data.field));
+        //    return false;
+        //});
+    });
+</script>
+

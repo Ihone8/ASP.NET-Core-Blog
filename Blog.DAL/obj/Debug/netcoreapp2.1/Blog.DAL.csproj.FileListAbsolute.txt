@@ -1,0 +1,11 @@
+F:\Person\BanditLearn\Blog\Blog.DAL\bin\Debug\netcoreapp2.1\Blog.DAL.deps.json
+F:\Person\BanditLearn\Blog\Blog.DAL\bin\Debug\netcoreapp2.1\Blog.DAL.dll
+F:\Person\BanditLearn\Blog\Blog.DAL\bin\Debug\netcoreapp2.1\Blog.DAL.pdb
+F:\Person\BanditLearn\Blog\Blog.DAL\bin\Debug\netcoreapp2.1\Blog.Model.dll
+F:\Person\BanditLearn\Blog\Blog.DAL\bin\Debug\netcoreapp2.1\Blog.Model.pdb
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.csprojResolveAssemblyReference.cache
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.csproj.CoreCompileInputs.cache
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.AssemblyInfoInputs.cache
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.AssemblyInfo.cs
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.dll
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.pdb

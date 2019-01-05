@@ -1,0 +1,99 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Areas\**" />
+    <Content Remove="Areas\Areas\**" />
+    <EmbeddedResource Remove="Areas\Areas\**" />
+    <None Remove="Areas\Areas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.DAL\Blog.DAL.csproj" />
+    <ProjectReference Include="..\Blog.Model\Blog.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Areas \Controllers\" />
+    <Folder Include="Areas\Areas \Data\" />
+    <Folder Include="Areas\Areas \Models\" />
+    <Folder Include="Areas\Areas \Views\" />
+    <Folder Include="wwwroot\lib\framework\js\" />
+    <Folder Include="wwwroot\upload\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\Default\scripts\highlight.js" />
+    <None Include="wwwroot\assets\Default\scripts\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\assets\Default\scripts\jquery.qrcode.min.js" />
+    <None Include="wwwroot\assets\Default\scripts\prettify.js" />
+    <None Include="wwwroot\assets\Default\scripts\yuuko.js" />
+    <None Include="wwwroot\assets\Hexo\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\Hexo\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\Hexo\js\highlight.js" />
+    <None Include="wwwroot\assets\Hexo\js\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\assets\Hexo\js\jquery.fancybox.js" />
+    <None Include="wwwroot\assets\Hexo\js\jquery.lazyload.js" />
+    <None Include="wwwroot\assets\Hexo\js\main.js" />
+    <None Include="wwwroot\assets\Hexo\js\mobile.js" />
+    <None Include="wwwroot\assets\Hexo\js\pc.js" />
+    <None Include="wwwroot\assets\Hexo\js\r.js" />
+    <None Include="wwwroot\assets\Moon\images\header_bright.psd" />
+    <None Include="wwwroot\assets\Moon\scripts\highlight.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery-1.10.2.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery-1.10.2.min.map" />
+    <None Include="wwwroot\assets\Moon\scripts\jQuery.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery.validate-vsdoc.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery.validate.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery.validate.min.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\assets\Moon\scripts\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\assets\Moon\scripts\Main.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\canvas.min.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\donate.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\global.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\navbar.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\paging.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\realshaow.js" />
+    <None Include="wwwroot\lib\layui\font\iconfont.svg" />
+    <None Include="wwwroot\lib\layui\layui.all.js" />
+    <None Include="wwwroot\lib\layui\layui.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\carousel.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\code.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\colorpicker.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\element.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\flow.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\form.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\jquery.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\laydate.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\layedit.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\layer.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\laypage.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\laytpl.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\mobile.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\rate.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\slider.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\table.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\tree.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\upload.js" />
+    <None Include="wwwroot\lib\layui\lay\modules\util.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\_Layout.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

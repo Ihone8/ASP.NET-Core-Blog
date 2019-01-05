@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+<div style="margin:10px;">
+    <a class="layui-btn" href="/Admin/Home/Add">
+        <i class="layui-icon layui-icon-add-1"></i>
+        添加
+    </a>
+
+    <table class="layui-table">
+        <thead>
+            <tr>
+                <th>博客标题</th>
+                <th>博客类型</th>
+                @*<th>内容</th>*@
+                <th>访问量</th>
+                <th>发布时间</th>
+                <th align="center">操作</th>
+            </tr>
+        </thead>
+        <tbody id="BlogList">
+            @*@foreach (Blog.Model.BLOG item in ViewBag.BlogList)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.CategoryTypeName</td>
+                        @*<td>@item.Content</td>*@
+            @*<th>@item.Visit</th>
+                    <th>@item.CreateDate.ToString()</th>
+                    <td>
+                        <a href="/Admin/Home/Add/@item.Id" title="编辑"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                        <a href="" title="删除"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                    </td>
+                </tr>*@
+            @*}*@
+
+        </tbody>
+    </table>
+    <div>
+        <div style="float:left;line-height:55px;margin:0 15px;font-size:14px;">
+            当前共<span id="totalCount"></span>篇文章，第<span id="pageIndex"></span>页/共<span id="pageCount"></span>页
+        </div>
+    </div>
+    <div id="page"></div>
+</div>
+<script>
+    var PageSize = 7;
+    layui.use(['laypage', 'layer'], function () {
+        var laypage = layui.laypage;
+        var layer = layui.layer;
+        var Url = "/Admin/Home/GetBlogListTotal?t=" + new Date().valueOf();
+        var totalCount;
+        var total = document.getElementById("totalCount");
+        var PageIndexs = document.getElementById("pageIndex");
+        var PageCounts = document.getElementById("pageCount");
+        $.post(Url, function (data) {
+            totalCount = data;
+            //console.log(data);
+            //console.log(totalCount);
+            var PageCount = (totalCount % PageSize == 0 ? totalCount / PageSize : Math.ceil(totalCount / PageSize));
+            $("#totalCount").text(data);
+            $("#pageCount").text(PageCount);
+            //PageCounts.value = PageCount;
+            // console.log(PageCount);
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+                , count: data  //数据总数，从服务端得到
+                , limit: PageSize
+                , jump: function (obj, first) {
+                    // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                    //console.log(obj.limit); //得到每页显示的条数
+                    $("#pageIndex").text(obj.curr);
+                    getBlogByPageIndex(obj.curr);
+
+                }
+            });
+        });
+
+
+    });
+    function Del(id) {
+        var Url = "/Admin/Home/Delete/" + id;
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            layer.confirm('是否确定删除？', function () {
+                $.post(Url, function (mes) {
+
+                    layer.alert(mes, function () { location.reload() });  // location.reload  // 刷新当前页面
+                });
+            });
+        });
+    }
+
+    function getBlogByPageIndex(pageIndex) {
+
+        var Url = "/Admin/Home/GetBlogListByPaging";
+        var Data = { PageIndex: pageIndex - 1, PageSize: PageSize };
+        var BlogListHmtl = document.getElementById("BlogList");
+        $.post(Url, Data, function (data) {
+
+            var Hmtl = "";
+            $.each(data.data, function (i, obj) {
+                Hmtl += "<tr><td>" + obj.title + "</td><td>" + obj.categoryTypeName + "</td><td>" + obj.visit + "</td><td>" + obj.createDate + "</td> <td><a href='/Admin/Home/Add/" + obj.id + "' title='编辑'><i class='layui-icon layui-icon-edit'></i>编辑</a><a href='javascriprt:void(0);' onclick='Del(" + obj.id + ")' title='删除'><i class='layui-icon layui-icon-delete'></i>删除</a></td></tr>";
+            });
+            BlogListHmtl.innerHTML = Hmtl;
+        })
+    }
+
+</script>
