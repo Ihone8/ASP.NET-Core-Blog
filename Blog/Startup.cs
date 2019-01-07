@@ -28,7 +28,7 @@ namespace Blog
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             string ConnString = Configuration.GetConnectionString("DefaultConnectionString");
@@ -41,7 +41,7 @@ namespace Blog
 
             CategoryDAL categoryDAL = new CategoryDAL(ConnString);
             services.AddSingleton<CategoryDAL>(categoryDAL);
-
+            services.AddSession();
             //services.AddSingleton<BlogDbConnection>();
             //services.AddSingleton<ConnectionFactory>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -53,6 +53,7 @@ namespace Blog
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -63,7 +64,7 @@ namespace Blog
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

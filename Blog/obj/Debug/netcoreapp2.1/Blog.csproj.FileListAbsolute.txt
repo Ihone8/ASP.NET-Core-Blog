@@ -23,6 +23,7 @@ F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Add.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Default.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Index.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\UserLogin.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_Layout.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\Index.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -39,3 +40,5 @@ F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.Views.pdb
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.dll
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.pdb
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
+F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\UserInfo.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\ChangePassWord.g.cshtml.cs

@@ -67,8 +67,8 @@
                                 </div>
                             </section>
                             <section class="switch-part switch-part4">
-                                <div id="js-friends">                                  
-                                    <div class="sidebar-blog-roll"><a target="_blank" href=""><img src="" alt="" /></a></div>                                  
+                                <div id="js-friends">
+                                    <div class="sidebar-blog-roll"><a target="_blank" href=""><img src="" alt="" /></a></div>
                                     <div class="sidebar-blog-roll"><a href="javascript:BlogRoll('ViewBag.GitHub');"><img src="~/assets/Default/images/blog-roll.png" /></a></div>
                                     <div class="sidebar-blog-roll-tip"></div>
                                 </div>
@@ -197,7 +197,7 @@
 
 
         });
-       
+
         function getBlogByPageIndex(pageIndex) {
 
             var Url = "/Admin/Home/GetBlogListByPaging";
@@ -209,8 +209,8 @@
                 $.each(data.data, function (i, obj) {
                     Html += "<article class='article article-type-post' itemscope itemprop='blogPost'>";
                     Html += "<div class='article-meta'><a href='' class='article-date' ><time datetime='' itemprop='datePublished'>" + obj.createDate + "</time></a></div>";
-                    Html += "<div class='article-inner' ><input type='hidden' class='isFancy' /><header class='article-header'><h1 itemprop='name'><a class='article-title' href='/Home/ShowBlogDetails/" + obj.id + "'>" + obj.title + "</a></h1></header>";
-                    Html += " <div class='article-entry' itemprop='articleBody'>" + obj.content + "。。。</div>";
+                    Html += "<div class='article-inner' ><input type='hidden' class='isFancy' /><header class='article-header'><h1 itemprop='name'><a class='article-title' style='width:800px;display:block' href='/Home/ShowBlogDetails/" + obj.id + "'>" + obj.title + "</a></h1></header>";
+                    Html += " <div class='article-entry' itemprop='articleBody'>" + obj.title + "</div>";
                     Html += " <div class='article-info article-info-index'><div class='article-tag tagcloud'><ul class='article-tag-list'><li class='article-tag-list-item'><a class='article-tag-list-link color1' asp-action='Tag' asp-controller='Home' asp-route-tag='" + obj.categoryTypeName + "'>" + obj.categoryTypeName + "</a></li></ul>";
                     Html += " </div><div class='clearfix'></div></div></div></article>";
                 });

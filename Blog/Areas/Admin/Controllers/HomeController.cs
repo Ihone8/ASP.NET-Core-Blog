@@ -8,6 +8,7 @@ using Blog.Model;
 using System.Net.Http.Headers;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 namespace Blog.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -15,23 +16,34 @@ namespace Blog.Areas.Admin.Controllers
     {
         CategoryDAL _CategoryDAL;
         BlogDAL _BlogDAL;
-
+        AdminDAL _AdminDAL;
         private IHostingEnvironment hostingEnv;
 
-        public HomeController(CategoryDAL categoryDal, BlogDAL blogDal, IHostingEnvironment hostingEnvironment)
+        public HomeController(CategoryDAL categoryDal, BlogDAL blogDal, IHostingEnvironment hostingEnvironment, AdminDAL adminDAL)
         {
             _CategoryDAL = categoryDal;
             _BlogDAL = blogDal;
+            _AdminDAL = adminDAL;
             hostingEnv = hostingEnvironment;
         }
         public IActionResult Index()
         {
+            string UserName = string.Empty;
+
+            UserName = HttpContext.Session.GetString("User");
+            if (string.IsNullOrEmpty(UserName))
+            {
+                Response.Redirect("/Admin/Home/UserLogin");
+            }
+            ViewBag.UserName = UserName;
             return View();
         }
 
         public IActionResult Default()
         {
             ViewBag.BlogList = _BlogDAL.GetList();
+           
+            
             return View();
         }
 
@@ -108,7 +120,7 @@ namespace Blog.Areas.Admin.Controllers
             List<BLOG> NewBlogList = new List<BLOG>();
             foreach (var item in list)
             {
-                string Content = item.Content.Length > 500 ? item.Content.Substring(0, 500): item.Content;
+                string Content = item.Content.Length > 500 ? item.Content.Substring(0, 500) : item.Content;
                 NewBlogList.Add(new BLOG() { Content = Content, BlogId = item.BlogId, CategoryTypeId = item.CategoryTypeId, CategoryTypeName = item.CategoryTypeName, Content_Md = item.Content_Md, CreateDate = item.CreateDate, Id = item.Id, Remark = item.Remark, State = item.State, Title = item.Title, UserID = item.UserID, Visit = item.Visit });
             }
             return Json(new { data = NewBlogList });
@@ -162,6 +174,26 @@ namespace Blog.Areas.Admin.Controllers
             }
             return Json(new { code = 1, msg = "上传失败", });
             #endregion
+        }
+
+        public IActionResult UserLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string UserName, string Password)
+        {
+
+            if (_AdminDAL.UserLogin(UserName, Password) > 0)
+            {
+                HttpContext.Session.SetString("User", UserName);
+                return Json(new { status = "y", msg = "登入成功！" });
+            }
+            else
+            {
+                return Json(new { status = "n", msg = "用户名或密码错误！" });
+            }
         }
 
     }

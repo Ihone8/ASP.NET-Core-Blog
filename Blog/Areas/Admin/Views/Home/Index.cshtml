@@ -41,9 +41,9 @@
                 <li class="layui-nav-item">
                     <a href="javascript:window.location.reload();" title="刷新"><i class="layui-icon layui-icon-refresh-3"></i></a>
                 </li>
-                <li class="layui-nav-item layui-hide-xs">
-                    <input class="layui-input layui-input-search" type="text" placeholder="搜索" autocomplete="off" />
-                </li>
+                @*<li class="layui-nav-item layui-hide-xs">
+                        <input class="layui-input layui-input-search" type="text" placeholder="搜索" autocomplete="off" />
+                    </li>*@
             </ul>
             <!--头部右侧导航-->
             <ul class="layui-nav layui-layout-right" lay-filter="rightmenu">
@@ -53,17 +53,17 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">
                         <i class="layui-icon layui-icon-user"></i>
-                        WRQ Blog
+                        @ViewBag.UserName
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" lay-href=""><i class="layui-icon layui-icon-form"></i>基本资料</a></dd>
-                        <dd><a href="javascript:;" lay-href=""><i class="layui-icon layui-icon-password"></i>修改密码</a></dd>
+                        <dd>@*<a href="javascript:;" lay-href="/Admin/System/UserInfo"><i class="layui-icon layui-icon-form"></i>基本资料</a>*@</dd>
+                        <dd><a href="javascript:;" lay-href="/Admin/System/ChangePassWord"><i class="layui-icon layui-icon-password"></i>修改密码</a></dd>
                     </dl>
                 </li>
                 @*<li class="layui-nav-item">
                         <a href="javascript:;">锁屏<i class="layui-icon layui-icon-password"></i></a>
                     </li>*@
-                <li class="layui-nav-item"><a href="">退出</a></li>
+                <li class="layui-nav-item"><a href="javascript:" onclick="ClosePage()">退出</a></li>
             </ul>
         </div>
         <!--左侧-->
@@ -174,7 +174,7 @@
                         title: elem[0].innerText,
                         type: 2,
                         content: url,
-                        area: ['600px', '500px']
+                        area: ['550px', '200px']
                     });
                 }
                 if (elem[0].innerText == "锁屏") {
@@ -237,6 +237,11 @@
                 }
             });
         });
+
+        function ClosePage() {
+            window.location.href = "about:blank";
+            window.close();
+        }
     </script>
 </body>
 </html>

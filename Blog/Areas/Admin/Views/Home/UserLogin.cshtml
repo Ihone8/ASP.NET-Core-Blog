@@ -1,0 +1,91 @@
+﻿
+<html lang="en" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - Login</title>
+    <link rel="stylesheet" type="text/css" href="~/login/normalize.css">
+    <link rel="stylesheet" type="text/css" href="~/login/demo(1).css">
+    <link rel="stylesheet" href="~/login/jquery.jgrowl.min.css">
+    <!--必要样式-->
+    <link rel="stylesheet" type="text/css" href="~/login/component.css">
+    <!--[if IE]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <style>
+
+        input::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.726);
+        }
+
+        input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: rgba(0, 0, 0, 0.726);
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: rgba(0, 0, 0, 0.726);
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: rgba(0, 0, 0, 0.726);
+        }
+    </style>
+</head>
+<body>
+    <div class="container demo-1">
+        <div class="content">
+            <div id="large-header" class="large-header" style="height: 554px;">
+                <canvas id="demo-canvas" width="1366" height="554"></canvas>
+                <div class="logo_box">
+                    <h3>Person Blog Login</h3>
+
+                    <div class="input_outer">
+                        <span class="u_user"></span>
+                        <input id="ID" name="logname" class="text" style="color: #000000 !important" type="text" placeholder="请输入账户">
+                    </div>
+                    <div class="input_outer">
+                        <span class="us_uer"></span>
+                        <input id="PASSWORD" name="logpass" class="text" style="color: #000000 !important; position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+                    </div>
+                    <div id="LOGIN" class="mb2"><a class="act-but submit" onclick="login()" style="color: #FFFFFF">登录</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/login/TweenLite.min.js"></script>
+    <script src="/login/EasePack.min.js"></script>
+    <script src="/login/jquery.js"></script>
+    <script src="/login/rAF.js"></script>
+    <script src="/login/demo-1.js"></script>
+    <script src="/login/jquery.jgrowl.min.js"></script>
+    <script src="/lib/layui/layui.js"></script>
+    <script>
+        function login() {
+            layui.use(['layer'], function () {
+                var layer = layui.layer;
+
+                var LoginUrl = "/Admin/Home/Login"
+
+                var UserName = $("#ID").val();
+                var PassWord = $("#PASSWORD").val();
+                if ((UserName != null && PassWord != null) && (UserName != "" && PassWord != "")) {
+                    var data = { UserName: UserName, Password: PassWord };
+                    console.log(data);
+                    $.post(LoginUrl, data, function (data) {
+                        if (data.status == "y") {
+                            location.href = "/Admin/Home/Index";
+                        } else {
+                            layer.alert(data.msg);
+                        }
+                    }, 'json');
+                }
+                else {
+                    layer.msg(" 用户名 或 密码不能为空！");
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>
