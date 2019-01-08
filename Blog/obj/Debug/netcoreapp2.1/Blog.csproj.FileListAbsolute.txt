@@ -9,6 +9,7 @@ F:\Person\BanditLearn\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.DAL.dll
 F:\Person\BanditLearn\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.Model.dll
 F:\Person\BanditLearn\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.DAL.pdb
 F:\Person\BanditLearn\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.Model.pdb
+F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csprojResolveAssemblyReference.cache
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CoreCompileInputs.cache
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.RazorAssemblyInfo.cache
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.RazorAssemblyInfo.cs
@@ -24,7 +25,9 @@ F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Index.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\UserLogin.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Shared\_Layout.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\ChangePassWord.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\Index.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\UserInfo.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowBlogDetails.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
@@ -39,6 +42,3 @@ F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.Views.pdb
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.dll
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.pdb
 F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
-F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\UserInfo.g.cshtml.cs
-F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\System\ChangePassWord.g.cshtml.cs
-F:\Person\BanditLearn\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csprojResolveAssemblyReference.cache

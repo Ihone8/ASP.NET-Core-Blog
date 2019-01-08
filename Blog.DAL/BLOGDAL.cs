@@ -28,6 +28,14 @@ namespace Blog.DAL
                 return _connection.Query<BLOG>("select * from BLOG where State = 0");
             }
         }
+
+        public int GetCountByCategoryTypeId(int Id)
+        {
+            using (var _connection = ConnectionFactory.GetOpenConnection(this.ConnStr))
+            {
+                return (int)_connection.ExecuteScalar("select count(*) from Blog where CategoryTypeId = @Id and state = 0", new { @Id = Id });
+            }
+        }
         /// <summary>
         /// 获得单条数据
         /// </summary>

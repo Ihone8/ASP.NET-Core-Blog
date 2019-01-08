@@ -6,4 +6,3 @@ F:\Person\BanditLearn\Blog\Blog.Model\obj\Debug\netcoreapp2.1\Blog.Model.Assembl
 F:\Person\BanditLearn\Blog\Blog.Model\obj\Debug\netcoreapp2.1\Blog.Model.AssemblyInfo.cs
 F:\Person\BanditLearn\Blog\Blog.Model\obj\Debug\netcoreapp2.1\Blog.Model.dll
 F:\Person\BanditLearn\Blog\Blog.Model\obj\Debug\netcoreapp2.1\Blog.Model.pdb
-F:\Person\BanditLearn\Blog\Blog.Model\obj\Debug\netcoreapp2.1\Blog.Model.csprojResolveAssemblyReference.cache

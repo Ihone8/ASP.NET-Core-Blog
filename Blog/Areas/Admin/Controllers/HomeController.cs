@@ -42,8 +42,7 @@ namespace Blog.Areas.Admin.Controllers
         public IActionResult Default()
         {
             ViewBag.BlogList = _BlogDAL.GetList();
-           
-            
+            ViewBag.calist = _CategoryDAL.GetList();
             return View();
         }
 
@@ -113,17 +112,28 @@ namespace Blog.Areas.Admin.Controllers
         /// <param name="PageSize">页面显示多少条</param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult GetBlogListByPaging(int PageIndex, int PageSize)
+        public IActionResult GetBlogListByPaging(int PageIndex, int PageSize, string Title, string startdate, string enddate, string CategoryType)
         {
             var BlogList = _BlogDAL.GetList();
-            var list = BlogList.Skip(PageSize * PageIndex).Take(PageSize).ToList();
-            List<BLOG> NewBlogList = new List<BLOG>();
-            foreach (var item in list)
+            if (!string.IsNullOrEmpty(Title))
             {
-                string Content = item.Content.Length > 500 ? item.Content.Substring(0, 500) : item.Content;
-                NewBlogList.Add(new BLOG() { Content = Content, BlogId = item.BlogId, CategoryTypeId = item.CategoryTypeId, CategoryTypeName = item.CategoryTypeName, Content_Md = item.Content_Md, CreateDate = item.CreateDate, Id = item.Id, Remark = item.Remark, State = item.State, Title = item.Title, UserID = item.UserID, Visit = item.Visit });
+                BlogList = BlogList.Where(o => o.Title.Contains(Title));
             }
-            return Json(new { data = NewBlogList });
+            if (!string.IsNullOrEmpty(startdate))
+            {
+                BlogList = BlogList.Where(o => o.CreateDate >= DateTime.Parse(startdate));
+            }
+            if (!string.IsNullOrEmpty(enddate))
+            {
+                BlogList = BlogList.Where(o => o.CreateDate <= DateTime.Parse(enddate));
+            }
+            if (!string.IsNullOrEmpty(CategoryType) && CategoryType != "0")
+            {
+                BlogList = BlogList.Where(o => o.CategoryTypeId.Equals(CategoryType));
+            }
+            var list = BlogList.Skip(PageSize * PageIndex).Take(PageSize).ToList();
+            var PageCount = BlogList.Count() % PageSize == 0 ? BlogList.Count() / PageSize : BlogList.Count() / PageSize + 1;           
+            return Json(new { data = list, PageCount = PageCount, total = BlogList.Count() });
         }
 
         [HttpPost]

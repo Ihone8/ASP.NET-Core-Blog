@@ -24,6 +24,8 @@ namespace Blog.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.CategoryList = _CATEGORYDAL.GetList();
+            ViewBag.BlogDAL = _BlogDAL;
             return View();
         }
 
@@ -37,7 +39,7 @@ namespace Blog.Controllers
             else
             {
                 BLOG bLOG = _BlogDAL.GetOne(Id.Value);
-                if(bLOG == null)
+                if (bLOG == null)
                 {
                     return Content("找不到该条博客数据！");
                 }
@@ -73,7 +75,7 @@ namespace Blog.Controllers
         {
             var BlogList = _BlogDAL.GetList();
             var list = BlogList.Skip(PageSize * PageIndex).Take(PageSize).ToList();
-            
+
             return Json(new { data = list });
         }
 
