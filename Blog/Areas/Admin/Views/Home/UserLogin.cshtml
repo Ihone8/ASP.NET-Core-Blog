@@ -86,6 +86,14 @@
             });
 
         }
+        $(function () {
+            $(document).keyup(function (event) {
+                if (event.keyCode == 13) {
+                    login();
+                    //document.getElementById("btnlogin").onclick();
+                }
+            });
+        });
     </script>
 </body>
 </html>

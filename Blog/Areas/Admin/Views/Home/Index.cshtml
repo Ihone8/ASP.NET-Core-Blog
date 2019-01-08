@@ -240,6 +240,8 @@
 
         function ClosePage() {
             window.location.href = "about:blank";
+            
+            parent.window.close();
             window.close();
         }
     </script>

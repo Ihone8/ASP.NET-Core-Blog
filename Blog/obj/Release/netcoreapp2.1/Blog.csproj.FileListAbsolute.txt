@@ -9,7 +9,6 @@ F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Blog.DAL.dll
 F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Blog.Model.dll
 F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Blog.DAL.pdb
 F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Blog.Model.pdb
-F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Blog.csprojAssemblyReference.cache
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Blog.csproj.CoreCompileInputs.cache
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Blog.RazorAssemblyInfo.cache
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Blog.RazorAssemblyInfo.cs
@@ -39,3 +38,7 @@ F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\View
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\Category\Index.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\System\Index.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Views\Home\ShowBlogDetails.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Blog.csprojResolveAssemblyReference.cache
+F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\Home\UserLogin.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\System\ChangePassWord.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\System\UserInfo.g.cshtml.cs

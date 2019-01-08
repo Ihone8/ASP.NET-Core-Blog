@@ -56,7 +56,7 @@ using Blog.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 342, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25cdb44532ed46419dc8164ed46d5eab", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6165b8f18c14238bd48cb04b359f47a", async() => {
                 BeginContext(31, 329, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"">
@@ -83,7 +83,7 @@ using Blog.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(371, 10918, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4b77632a33b45fcbb34b9edc1587106", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be7c0c37fc404068af31a6cbe8f06c57", async() => {
                 BeginContext(377, 815, true);
                 WriteLiteral(@"
     <div id=""container"">
@@ -152,7 +152,7 @@ using Blog.Models;
                                     <div class=""sidebar-blog-roll""><a href=""javascript:BlogRoll('ViewBag.GitHub');"">");
                 EndContext();
                 BeginContext(4127, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "546d4cab2b8344c89ebfb416678b2ea2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f896d0f2db22436ca4f6424d63b11306", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
