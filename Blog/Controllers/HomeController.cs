@@ -32,6 +32,8 @@ namespace Blog.Controllers
 
         public IActionResult ShowBlogDetails(int? Id)
         {
+            ViewBag.CategoryList = _CATEGORYDAL.GetList();
+            ViewBag.BlogDAL = _BlogDAL;
             if (Id == null)
             {
                 return Content("找不到该条博客数据！");

@@ -3,7 +3,6 @@
 
     Blog.DAL.BlogDAL blogDAL = ViewBag.BlogDAL;
 }
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -50,7 +49,7 @@
                                         <a class="mail" target="_blank" href="mailto:2213629594qq.com" title="Email">Email</a>
                                     </div>
                                 </nav>
-                            </section>                                                   
+                            </section>
                         </div>
                     </div>
                 </header>
@@ -77,7 +76,7 @@
                             <ul>
                                 @foreach (Blog.Model.CATEGORY item in ViewBag.CategoryList)
                                 {
-                                    <li><a href="/Home/Index?PageIndex=0&PageSize=2&CategoryType=@item.Id">@Html.Raw(item.CName) （@(blogDAL.GetCountByCategoryTypeId(item.Id)))）</a></li>
+                                <li><a href="javascript:;" onclick="LoadPagingByPageIndex(1,@item.Id)">@Html.Raw(item.CName) （@(blogDAL.GetCountByCategoryTypeId(item.Id))）</a></li>
                                 }
                                 <div class="clearfix"></div>
                             </ul>
@@ -138,11 +137,11 @@
     <script src="/lib/layui/layui.js"></script>
     <script>
         var PageSize = 3;
-     
 
 
 
-        LoadPagingByPageIndex(1,"");
+
+        LoadPagingByPageIndex(1, "");
 
 
 
@@ -194,10 +193,12 @@
         }
         $("#txtkey").keyup(function () {
             if (event.keyCode == 13) {
-                LoadPagingByPageIndex(1,"");
+                LoadPagingByPageIndex(1, "");
                 //这里写你要执行的事件;
             }
         });
+
+        
     </script>
 </body>
 </html>

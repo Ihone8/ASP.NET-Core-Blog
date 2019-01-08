@@ -1,6 +1,7 @@
 ﻿@model Blog.Model.BLOG
 @{
     Layout = null;
+    Blog.DAL.BlogDAL blogDAL = ViewBag.BlogDAL;
 }
 
 <!DOCTYPE html>
@@ -26,64 +27,27 @@
                     </a>
                     <hgroup>
                         <h1 class="header-author"><a href="/">一大条咸鱼</a></h1>
-                    </hgroup>
-                    <p class="header-subtitle">一小条咸鱼</p>
+                    </hgroup>                
                     <div class="switch-area">
                         <div class="switch-wrap">
                             <section class="switch-part switch-part1">
                                 <nav class="header-menu">
                                     <ul>
-                                        @*<li><a href="/">主页</a></li>*@
-
-                                        <li><a href="/catalog/x.Url.ToLower()">.NET（34）</a></li>
-                                        <li><a href="/catalog/x.Url.ToLower()"> C# （34）</a></li>
-                                        <li><a href="/catalog/x.Url.ToLower()">ASP.NET MVC （34）</a></li>
-                                        <li><a href="/catalog/x.Url.ToLower()">LIUNX （4）</a></li>
+                                        @foreach (Blog.Model.CATEGORY item in ViewBag.CategoryList)
+                                        {
+                                        <li><a href="/Home/Index">@Html.Raw(item.CName) （@(blogDAL.GetCountByCategoryTypeId(item.Id)))）</a></li>
+                                        }
+                                        <div class="clearfix"></div>
 
                                     </ul>
                                 </nav>
                                 <nav class="header-nav">
                                     <div class="social">
                                         <a class="github" target="_blank" href="https://github.com/Ihone8" title="github">github</a>
-                                        <a class="linkedin" target="_blank" href="http://www.linkedin.com/in/%E7%A7%8B%E5%AE%9E-%E7%94%B0-146850126" title="LinkedIn">LinkedIn</a>
                                         <a class="mail" target="_blank" href="mailto:2213629594qq.com" title="Email">Email</a>
                                     </div>
                                 </nav>
                             </section>
-                            <section class="switch-part switch-part2">
-                                <div class="widget">
-
-                                    <nav class="header-menu">
-                                        <ul>
-                                            <li><a href="/x.Year/x.Month">2016年12月 （34）</a></li>
-                                            <li><a href="/x.Year/x.Month">2016年12月 （34）</a></li>
-                                            <li><a href="/x.Year/x.Month">2016年12月 （34）</a></li>
-
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </section>
-                            <section class="switch-part switch-part3">
-                                <div class="widget tagcloud" id="js-tagcloud">
-
-                                    <a href="/tag/x.Title/" style="font-size: 10px;">NET</a>
-                                    <a href="/tag/x.Title/" style="font-size: 10px;">XAMARIN</a>
-                                    <a href="/tag/x.Title/" style="font-size: 10px;">IOS</a>
-                                    <a href="/tag/x.Title/" style="font-size: 10px;">ANDROID</a>
-
-                                </div>
-                            </section>
-                            <section class="switch-part switch-part4">
-                                <div id="js-friends">
-                                    foreach (BlogRollViewModel x in ViewBag.Rolls)
-                                    {
-                                    <div class="sidebar-blog-roll"><a target="_blank" href="x.URL"><img src="/file/download/x.AvatarId" alt="x.Name" /></a></div>
-                                    }
-                                    <div class="sidebar-blog-roll"><a href="javascript:BlogRoll('ViewBag.GitHub');"><img src="~/assets/Default/images/blog-roll.png" /></a></div>
-                                    <div class="sidebar-blog-roll-tip"></div>
-                                </div>
-                            </section>
-
                         </div>
                     </div>
                 </header>
@@ -108,20 +72,16 @@
 
                         <nav class="header-menu">
                             <ul>
-                                <li><a href="/">主页</a></li>
-
-                                <li><a href="/catalog/x.Url.ToLower()">.NET（1）</a></li>
-                                <li><a href="/catalog/x.Url.ToLower()">ASP.NET（1）</a></li>
-                                <li><a href="/catalog/x.Url.ToLower()">SQLSERVER（1）</a></li>
-                                <li><a href="/catalog/x.Url.ToLower()">ASP.NET MVC（5）</a></li>
-
+                                @foreach (Blog.Model.CATEGORY item in ViewBag.CategoryList)
+                                {
+                                    <li><a href="/Home/Index">@Html.Raw(item.CName) （@(blogDAL.GetCountByCategoryTypeId(item.Id)))）</a></li>
+                                }
                                 <div class="clearfix"></div>
                             </ul>
                         </nav>
                         <nav class="header-nav">
                             <div class="social">
-                                <a class="github" target="_blank" href="https://github.com/Ihone8" title="github">github</a>
-                                <a class="linkedin" target="_blank" href="http://www.linkedin.com/in/%E7%A7%8B%E5%AE%9E-%E7%94%B0-146850126" title="LinkedIn">LinkedIn</a>
+                                <a class="github" target="_blank" href="https://github.com/Ihone8" title="github">github</a>                               
                                 <a class="mail" target="_blank" href="mailto:2213629594qq.com" title="Email">Email</a>
                             </div>
                         </nav>
@@ -156,18 +116,6 @@
                             </div>
                             <div class="clearfix"></div>
                         </div>
-
-                        @*
-
-                                 <div class='article-info article-info-index'>
-                                                <div class='article-tag tagcloud'>
-                                                <ul class='article-tag-list'>
-                                                <li class='article-tag-list-item'>
-                                                <a class='article-tag-list-link' asp-action='Tag' asp-controller='Home' asp-route-tag='" + obj.categoryTypeName + "'>" + obj.categoryTypeName + "</a></li></ul>";
-                            </div><div class='clearfix'></div></div>
-
-
-                        *@
                     </div>
                 </article>
                 <div id="page" style="margin-left:28px;"></div>
