@@ -5,7 +5,7 @@
 
 ### 以下是项目截图
 
-![https://github.com/Ihone8/dotnetCoreBlog/blob/master/Blog/wwwroot/images/qtzy.png]()
+![https://raw.githubusercontent.com/Ihone8/dotnetCoreBlog/master/Blog/wwwroot/images/qtzy.png]()
 
 ![https://github.com/Ihone8/dotnetCoreBlog/blob/master/Blog/wwwroot/images/qtxq.png]()
 
