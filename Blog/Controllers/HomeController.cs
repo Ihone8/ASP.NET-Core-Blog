@@ -49,38 +49,7 @@ namespace Blog.Controllers
                 _BlogDAL.Update(bLOG);
                 return View(bLOG);
             }
-        }
-
-
-        //  
-
-        /// <summary>
-        ///  获取博客总数量
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        public IActionResult GetBlogListTotal()
-        {
-            var Total = _BlogDAL.GetCount();
-
-            return Content(Total.ToString());
-        }
-
-        /// <summary>
-        ///  根据分页获取博客数据
-        /// </summary>
-        /// <param name="PageIndex">页码</param>
-        /// <param name="PageSize">页面显示多少条</param>
-        /// <returns></returns>
-        [HttpPost]
-        public IActionResult GetBlogListByPaging(int PageIndex, int PageSize)
-        {
-            var BlogList = _BlogDAL.GetList();
-            var list = BlogList.Skip(PageSize * PageIndex).Take(PageSize).ToList();
-
-            return Json(new { data = list });
-        }
-
+        }     
 
     }
 }

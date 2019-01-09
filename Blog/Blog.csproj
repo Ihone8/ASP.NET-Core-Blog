@@ -29,6 +29,7 @@
     <Folder Include="Areas\Areas \Data\" />
     <Folder Include="Areas\Areas \Models\" />
     <Folder Include="Areas\Areas \Views\" />
+    <Folder Include="wwwroot\js\Admin\" />
     <Folder Include="wwwroot\lib\framework\js\" />
     <Folder Include="wwwroot\upload\" />
   </ItemGroup>

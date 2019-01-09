@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Data;
 using System.Text;
 using Blog.Model;
@@ -115,11 +116,35 @@ namespace Blog.DAL
         /// 获取博客总数量
         /// </summary>
         /// <returns></returns>
-        public int GetCount()
+        public int GetCount(string where = "")
         {
             using (var _connection = ConnectionFactory.GetOpenConnection(this.ConnStr))
             {
-                return (int)_connection.ExecuteScalar("select count(*) from Blog where State = 0");
+                string sql = " select count(*) from Blog where State = 0 ";
+                if (!string.IsNullOrEmpty(where))
+                {
+                    sql += $" and  {where}";
+                }
+                return (int)_connection.ExecuteScalar(sql);
+            }
+        }
+
+        public List<Blog.Model.BLOG> GetBlogListByPaging(string orderstr, int PageSize, int PageIndex, string strWhere)
+        {
+            using (var _connection = ConnectionFactory.GetOpenConnection(this.ConnStr))
+            {
+                if (!string.IsNullOrEmpty(strWhere))
+                {
+                    strWhere = " where " + strWhere;
+                }
+                string sql = string.Format(
+                       "select * from [blog] {0} order by {1} offset {2} rows fetch next {3} rows only",
+                       strWhere,
+                       orderstr,
+                       PageIndex * PageSize,
+                       PageSize
+                   );
+                return _connection.Query<Blog.Model.BLOG>(sql).ToList();
             }
         }
     }
