@@ -32,12 +32,15 @@ namespace Blog
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             string ConnString = Configuration.GetConnectionString("DefaultConnectionString");
-
+            string UserConnString = Configuration.GetConnectionString("UserDB");
             AdminDAL adminDAL = new AdminDAL(ConnString);
             services.AddSingleton<AdminDAL>(adminDAL);
 
             BlogDAL blogDAL = new BlogDAL(ConnString);
             services.AddSingleton<BlogDAL>(blogDAL);
+
+            UserDAL userDAL = new UserDAL(UserConnString);
+            services.AddSingleton<UserDAL>(userDAL);
 
             CategoryDAL categoryDAL = new CategoryDAL(ConnString);
             services.AddSingleton<CategoryDAL>(categoryDAL);

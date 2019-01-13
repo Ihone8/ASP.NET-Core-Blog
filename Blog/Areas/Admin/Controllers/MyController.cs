@@ -17,11 +17,7 @@ namespace Blog.Areas.Admin.Controllers
         string UserName = string.Empty;
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            UserName = HttpContext.Session.GetString("User");
-            if (string.IsNullOrEmpty(UserName))
-            {
-                HttpContext.Response.Redirect("/Admin/Home/UserLogin");
-            }
+           
 
             base.OnActionExecuting(context);
         }

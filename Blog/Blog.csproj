@@ -94,6 +94,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\..\..\SASM_ByAspNetMvc_T\SASM_ByAspNetMvc\Common\bin\Debug\Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Shared\_Layout.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
