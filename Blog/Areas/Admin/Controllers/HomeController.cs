@@ -182,12 +182,13 @@ namespace Blog.Areas.Admin.Controllers
                 }
                 filename = hostingEnv.WebRootPath + $@"\upload\{dir}\{filename1}";
                 size += imgFile.Length;
+
                 using (FileStream fs = System.IO.File.Create(filename))
                 {
                     imgFile.CopyTo(fs);
                     fs.Flush();
                 }
-                return Json(new { code = 0, msg = "上传成功", data = new { src = $"/upload/{dir}/{filename1}", title = "图片标题" } });
+                return Json(new { code = 0, msg = "上传成功", data = new { src = $"/upload/{dir}/{filename1}", title = filename.Split('.')[0] } });
             }
             return Json(new { code = 1, msg = "上传失败", });
             #endregion
