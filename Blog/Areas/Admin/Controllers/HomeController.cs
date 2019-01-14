@@ -119,7 +119,7 @@ namespace Blog.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(Title))
             {
                 //BlogList = BlogList.Where(o => o.Title.Contains(Title));
-                where += $" and Title like '%{Title}%'";
+                where += $" and Title like '%{Title}%' or Content like '%{Title}%'";
             }
             if (!string.IsNullOrEmpty(startdate))
             {
