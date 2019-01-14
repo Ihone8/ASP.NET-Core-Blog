@@ -42,3 +42,6 @@ F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Blog.csprojResolveAsse
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\Home\UserLogin.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\System\ChangePassWord.g.cshtml.cs
 F:\Person\BanditLearn\Blog\Blog\obj\Release\netcoreapp2.1\Razor\Areas\Admin\Views\System\UserInfo.g.cshtml.cs
+F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Common.dll
+F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Common.pdb
+F:\Person\BanditLearn\Blog\Blog\bin\Release\netcoreapp2.1\Common.dll.config

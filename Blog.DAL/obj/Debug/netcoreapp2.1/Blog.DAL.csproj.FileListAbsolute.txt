@@ -8,4 +8,5 @@ F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.AssemblyInf
 F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.AssemblyInfo.cs
 F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.dll
 F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.pdb
-F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.csprojResolveAssemblyReference.cache
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.csprojAssemblyReference.cache
+F:\Person\BanditLearn\Blog\Blog.DAL\obj\Debug\netcoreapp2.1\Blog.DAL.csproj.CopyComplete

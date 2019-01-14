@@ -29,7 +29,8 @@
           "Dapper": "1.50.5",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
+          "Common": "1.0.0.0"
         },
         "runtime": {
           "Blog.dll": {}
@@ -1072,6 +1073,17 @@
         },
         "compile": {
           "Blog.Model.dll": {}
+        }
+      },
+      "Common/1.0.0.0": {
+        "runtime": {
+          "Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "Common.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4434,6 +4446,11 @@
     },
     "Blog.Model/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Common/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },

@@ -41,3 +41,6 @@ F:\Person\BanditLearn\Blog\Blog\obj\Any CPU\Release\netcoreapp2.1\Blog.Views.pdb
 F:\Person\BanditLearn\Blog\Blog\obj\Any CPU\Release\netcoreapp2.1\Blog.dll
 F:\Person\BanditLearn\Blog\Blog\obj\Any CPU\Release\netcoreapp2.1\Blog.pdb
 F:\Person\BanditLearn\Blog\Blog\obj\Any CPU\Release\netcoreapp2.1\Blog.csproj.CopyComplete
+F:\Person\BanditLearn\Blog\Blog\bin\Any CPU\Release\netcoreapp2.1\Common.dll
+F:\Person\BanditLearn\Blog\Blog\bin\Any CPU\Release\netcoreapp2.1\Common.pdb
+F:\Person\BanditLearn\Blog\Blog\bin\Any CPU\Release\netcoreapp2.1\Common.dll.config
