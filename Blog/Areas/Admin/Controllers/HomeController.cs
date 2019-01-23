@@ -176,11 +176,11 @@ namespace Blog.Areas.Admin.Controllers
                 tempname = filename1;
                 var path = hostingEnv.WebRootPath;
                 string dir = DateTime.Now.ToString("yyyyMMdd");
-                if (!System.IO.Directory.Exists(hostingEnv.WebRootPath + $@"\upload\{dir}"))
+                if (!System.IO.Directory.Exists(hostingEnv.WebRootPath + $@"/upload/{dir}"))
                 {
-                    System.IO.Directory.CreateDirectory(hostingEnv.WebRootPath + $@"\upload\{dir}");
+                    System.IO.Directory.CreateDirectory(hostingEnv.WebRootPath + $@"/upload/{dir}");
                 }
-                filename = hostingEnv.WebRootPath + $@"\upload\{dir}\{filename1}";
+                filename = hostingEnv.WebRootPath + $@"/upload/{dir}/{filename1}";
                 size += imgFile.Length;
 
                 using (FileStream fs = System.IO.File.Create(filename))

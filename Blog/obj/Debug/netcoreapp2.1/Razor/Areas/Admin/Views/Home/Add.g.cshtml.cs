@@ -151,7 +151,7 @@ WriteAttributeValue("", 1278, item.Id, 1278, 8, false);
             WriteLiteral("            <a href=\"/Admin/Home/Default\" class=\"layui-btn\">返回列表</a>\r\n        </div>\r\n    </div>\r\n</form>\r\n");
             EndContext();
             BeginContext(2152, 44, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b93630ad2924450e8528d8136b5c63d2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ddb05fa8ac043d4b94d066be4c3934e", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
